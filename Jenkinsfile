@@ -45,7 +45,7 @@ pipeline {
                 input 'Deploy to Production?'
                 milestone(1)
                 kubernetesDeploy(
-                    kubeconfigId: [path: '/var/lib/jenkins/train-schedule-kubernetes/.kube/config'],,
+                    kubeconfigId: [path: '/var/lib/jenkins/train-schedule-kubernetes/.kube/config'],
                     configs: 'train-schedule-kube.yml',
                     enableConfigSubstitution: true
                 )
