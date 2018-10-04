@@ -2,12 +2,14 @@ kind: Service
 apiVersion: v1
 metadata:
   name: train-schedule-web
+  labels:
+    app: train-schedule-web
 spec:
   type: LoadBalancer
   selector:
-    app: train-schedule
+    app: train-schedule-web
   ports:
-  - protocol: TCP
+  - name: web
     port: 30001
     targetPort: 30001
 
