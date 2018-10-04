@@ -11,7 +11,7 @@ spec:
   ports:
   - name: web
     port: 30001
-    targetPort: 30001
+    targetPort: 8080
 
 ---
 
@@ -35,5 +35,5 @@ spec:
       - name: train-schedule-web
         image: $DOCKER_IMAGE_NAME:$BUILD_NUMBER
         ports:
-        - containerPort: 30001
+        - containerPort: 8080
           name: train-schedule-web
