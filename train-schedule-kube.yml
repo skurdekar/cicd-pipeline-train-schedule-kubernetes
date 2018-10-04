@@ -18,21 +18,22 @@ spec:
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  name: train-schedule-deployment
+  name: train-schedule-web
   labels:
-    app: train-schedule
+    app: train-schedule-web
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: train-schedule
+      app: train-schedule-web
   template:
     metadata:
       labels:
-        app: train-schedule
+        app: train-schedule-web
     spec:
       containers:
-      - name: train-schedule
+      - name: train-schedule-web
         image: $DOCKER_IMAGE_NAME:$BUILD_NUMBER
         ports:
         - containerPort: 30001
+          name: train-schedule-web
