@@ -10,7 +10,7 @@ spec:
     app: train-sc-web
   ports:
   - name: web
-    port: 30002
+    port: 30006
     targetPort: 8080
 
 ---
